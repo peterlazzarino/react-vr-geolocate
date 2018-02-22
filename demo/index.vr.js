@@ -8,7 +8,7 @@ import {
   Image,
   View,
 } from 'react-vr';
-import Earth from "./components/earth/earth";
+import Earth from "react-vr-geolocate";
 import Marker from "./components/locationMarker/marker";
 
 export default class world_explorer extends React.Component {

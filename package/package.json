@@ -1,6 +1,6 @@
 {
   "name": "react-vr-geolocate",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "start": "node -e \"console.log('open browser at http://localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
     "bundle": "node node_modules/react-vr/scripts/bundle.js",
@@ -16,7 +16,7 @@
     "webvr",
     "VR"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "create-react-class": "15.6.2",
     "ovrui": "~2.0.0",
