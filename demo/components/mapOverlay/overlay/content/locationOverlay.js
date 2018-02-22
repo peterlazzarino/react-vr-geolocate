@@ -22,7 +22,7 @@ export default class LocationOverlay extends React.Component{
                 transform: [{
                     rotateY: this.getYRotationForLocation(location),
                 }, {
-                    rotateX: -55
+                    rotateX: -40
                 }, {
                     translateZ: .05
                 }]

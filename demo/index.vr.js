@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-vr';
 import Earth from "./components/earth/earth";
+import Marker from "./components/locationMarker/marker";
 
 export default class world_explorer extends React.Component {
   constructor(){
@@ -17,13 +18,13 @@ export default class world_explorer extends React.Component {
     this.locationItems = [
       { 
         coordinates: { lat: 40.7128, lon: -74.0060 },
-        component: <Image style={{ width:.1, height:.1}} source={asset("pin.png")} />
+        component: <Marker />
       },{ 
         coordinates: { lat: 40.7128, lon: -52.0060 },
-        component: <Image style={{ width:.1, height:.1}} source={asset("pin.png")} />
+        component: <Marker />
       },{ 
         coordinates: { lat: 40.7128, lon: -34.0060 },
-        component: <Image style={{ width:.1, height:.1}} source={asset("pin.png")} />
+        component: <Marker />
       }
     ]
   }
@@ -39,7 +40,6 @@ export default class world_explorer extends React.Component {
           }}
         >
           <Earth 
-            showLocationMarkers={true}
             locationMarkerStyle={{color: "black"}}
             locationContent={this.locationItems} 
             scale={earthRadius} 
