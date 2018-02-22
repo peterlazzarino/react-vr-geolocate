@@ -26,10 +26,16 @@ const usCities = [
 ];
 
 const europeanCities = [  
-    { 
-      coordinates: { lat: 48.7128, lon: 2.3522 },
-      component: <Marker />
-    }
+  { 
+    coordinates: { lat: 48.7128, lon: 2.3522 },
+    component: <Marker />
+  },{ 
+    coordinates: { lat: 41.9028, lon: 12.4964 },
+    component: <Marker />
+  },{ 
+    coordinates: { lat: 52.5200, lon: 13.4050 },
+    component: <Marker />
+  }  
 ]
 
 export default class world_explorer extends React.Component {
@@ -39,14 +45,19 @@ export default class world_explorer extends React.Component {
     this.locationItems = europeanCities;
     this.selectUS = this.selectUS.bind(this);
     this.selectEurope = this.selectEurope.bind(this);
+    this.state = {
+      locationItems: []
+    }
   }
   selectUS(){
-    this.locationItems = usCities;
-    this.forceUpdate();
+    this.setState({
+      locationItems: usCities
+    })
   }
   selectEurope(){
-    this.locationItems = europeanCities;
-    this.forceUpdate();
+    this.setState({
+      locationItems: europeanCities
+    })
   }
   render() {
     const earthRadius = 1.5;
@@ -90,7 +101,9 @@ export default class world_explorer extends React.Component {
           }}
         >
           <Earth 
-            locationContent={this.locationItems} 
+            locationMarkerStyle={{color: "red"}}
+            showLocationMarkers={true}
+            locationContent={this.state.locationItems} 
             scale={earthRadius} 
           />
         </View>
