@@ -13,6 +13,9 @@ export default class Overlay extends React.Component{
     }
     render(){   
         const { locationContent, showLocationMarkers, locationMarkerStyle, sphereRadius } = this.props;  
+        if(!locationContent){
+            return null;
+        }
         return (
             <View>
                 {locationContent.map((location, idx) => {

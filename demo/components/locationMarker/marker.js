@@ -10,7 +10,8 @@ export default class Marker extends React.Component{
         return (
             <Image style={{
                 transform: [
-                    { translate: [-.05,.1,0]}
+                    { rotateX: 25},
+                    { translate: [-.01,.08,0]}
                 ],
                 width:.05, 
                 height:.05

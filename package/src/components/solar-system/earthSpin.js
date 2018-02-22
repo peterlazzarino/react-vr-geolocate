@@ -25,7 +25,10 @@ export default class EarthSpin extends React.Component{
         return (lon >= 0 ? -lon : Math.abs(lon)) + this.primeMeridianOffset;
     }
     resetEarthPosition(props){
-        const locationItems = this.props.locationContent;
+        const locationItems = props.locationContent;
+        if(!Array.isArray(locationItems) || locationItems.length <= 0){
+            return false;
+        }
         let focalPoint = locationItems[0];
         if(locationItems.length >= 1){
             const firstLoc = locationItems[0].coordinates;
