@@ -70,7 +70,7 @@ export default class world_explorer extends React.Component {
             backgroundColor:"grey",
             padding:.1,
             transform: [
-              {translate: [-3.8,1,-3]},
+              {translate: [-3.4,1,-3.5]},
               {rotateY: 25}
             ]
           }}
@@ -91,7 +91,7 @@ export default class world_explorer extends React.Component {
           style={{
             position:"absolute",
             transform: [
-              {translate: [0,0,-3]}
+              {translate: [0,0,-3.5]}
             ]
           }}
         >
@@ -103,7 +103,7 @@ export default class world_explorer extends React.Component {
             scale={earthRadius} 
           />
         </View>
-        <Pano source={asset('star_bg.jpg')}/> 
+        <Pano source={asset('chess-world.jpg')}/> 
         <AmbientLight intensity={1.2} decay={100} />        
       </View>
     );
