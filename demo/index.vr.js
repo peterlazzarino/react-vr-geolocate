@@ -11,19 +11,7 @@ import {
 } from 'react-vr';
 import Earth from "react-vr-geolocate";
 import Marker from "./components/locationMarker/marker";
-
-const usCities = [
-  { 
-    coordinates: { lat: 40.7128, lon: -74.0060 },
-    component: <Marker />
-  },{ 
-    coordinates: { lat: 40.7128, lon: -52.0060 },
-    component: <Marker />
-  },{ 
-    coordinates: { lat: 40.7128, lon: -34.0060 },
-    component: <Marker />
-  }
-];
+import DogMarker from "./components/locationMarker/dogMarker";
 
 const europeanCities = [  
   { 
@@ -35,29 +23,32 @@ const europeanCities = [
   },{ 
     coordinates: { lat: 52.5200, lon: 13.4050 },
     component: <Marker />
+  },{ 
+    coordinates: { lat: 64.1265, lon: -21.8174 },
+    component: <Marker />
+  }  
+]
+
+const dogCities = [  
+  { 
+    coordinates: { lat: 43.3601, lon: -71.0589 },
+    component: <DogMarker />
+  },{ 
+    coordinates: { lat: 40.7128, lon: -74.0060 },
+    component: <DogMarker />
+  },{ 
+    coordinates: { lat: 44.3876, lon: -68.2039 },
+    component: <DogMarker />
   }  
 ]
 
 export default class world_explorer extends React.Component {
   constructor(){
     super();
-    this.earthRadius = 1.5;
-    this.locationItems = europeanCities;
-    this.selectUS = this.selectUS.bind(this);
-    this.selectEurope = this.selectEurope.bind(this);
+    this.earthRadius = 2.5;
     this.state = {
       locationItems: []
     }
-  }
-  selectUS(){
-    this.setState({
-      locationItems: usCities
-    })
-  }
-  selectEurope(){
-    this.setState({
-      locationItems: europeanCities
-    })
   }
   render() {
     const earthRadius = 1.5;
@@ -74,29 +65,33 @@ export default class world_explorer extends React.Component {
       <View> 
         <View
           style={{
-            width:2,
+            width:1.5,
             height:1,
             backgroundColor:"grey",
             padding:.1,
             transform: [
-              {translate: [-3.8,1,-4]},
+              {translate: [-3.8,1,-3]},
               {rotateY: 25}
             ]
           }}
         >
           <Text>Select an option to load new locations</Text>
-          <VrButton style={buttonStyle} onClick={()=>this.selectUS()}>
-            <Text>US Cities</Text>
-          </VrButton>
-          <VrButton style={buttonStyle} onClick={()=>this.selectEurope()}>
+          <VrButton style={buttonStyle} onClick={()=>this.setState({
+            locationItems: europeanCities
+          })}>
             <Text>European Cities</Text>
+          </VrButton>
+          <VrButton style={buttonStyle} onClick={()=>this.setState({
+            locationItems: dogCities
+          })}>
+            <Text>Places my dog has been</Text>
           </VrButton>
         </View>
         <View
           style={{
             position:"absolute",
             transform: [
-              {translate: [0,0,-4]}
+              {translate: [0,0,-3]}
             ]
           }}
         >
