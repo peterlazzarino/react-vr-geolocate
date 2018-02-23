@@ -98,6 +98,7 @@ export default class world_explorer extends React.Component {
           <Earth 
             locationMarkerStyle={{color: "red"}}
             showLocationMarkers={true}
+            wrap={asset("earth.jpg")}
             locationContent={this.state.locationItems} 
             scale={earthRadius} 
           />

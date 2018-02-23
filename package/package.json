@@ -1,6 +1,6 @@
 {
   "name": "react-vr-geolocate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "start": "node -e \"console.log('open browser at http://localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
     "bundle": "node node_modules/react-vr/scripts/bundle.js",
