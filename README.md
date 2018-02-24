@@ -2,6 +2,8 @@
 
 Show geo-location data in VR on a 3D representation of the earth.
 
+![Preview Image](https://media.giphy.com/media/3rWuaYmaxIWZbTVaRg/giphy.gif)
+
 This component will render a VR Earth Sphere and takes a collection of objects with lat / lon and a react component. It will render the components at their 3D coordinates on the earth translated from lat / lon. 
 
 When locations are passed in or changed, the earth will rotate to them automatically, calculating a midpoint between them as a focal point for the user. 
