@@ -29,8 +29,6 @@ import React from 'react';
 import {
   AppRegistry,
   asset,
-  Pano,
-  AmbientLight,
   View
 } from 'react-vr';
 import Earth from "react-vr-geolocate";
@@ -43,13 +41,7 @@ const europeanCities = [
   },{ 
     coordinates: { lat: 41.9028, lon: 12.4964 },
     component: <Marker />
-  },{ 
-    coordinates: { lat: 52.5200, lon: 13.4050 },
-    component: <Marker />
-  },{ 
-    coordinates: { lat: 64.1265, lon: -21.8174 },
-    component: <Marker />
-  }  
+  }
 ]
 
 export default class world_explorer extends React.Component {
@@ -58,25 +50,21 @@ export default class world_explorer extends React.Component {
   }
   render() {
     return (
-      <View> 
-        <View
-          style={{
-            position:"absolute",
-            transform: [
-              { translate: [0,0,-3.5] }
-            ]
-          }}
-        >
-          <Earth 
-            locationMarkerStyle={{color: "black"}}
-            showLocationMarkers={true}
-            wrap={asset("earth.jpg")}
-            locationContent={europeanCities} 
-            scale={1.5} 
-          />
-        </View>
-        <Pano source={asset('chess-world.jpg')}/> 
-        <AmbientLight intensity={1.2} decay={100} />        
+      <View
+        style={{
+          position:"absolute",
+          transform: [
+            { translate: [0,0,-3.5] }
+          ]
+        }}
+      >
+        <Earth 
+          locationMarkerStyle={{color: "black"}}
+          showLocationMarkers={true}
+          wrap={asset("earth.jpg")}
+          locationContent={europeanCities} 
+          scale={1.5} 
+        />
       </View>
     );
   }
